@@ -1,0 +1,18 @@
+
+.table__image {
+  width: 50px;
+  height: 50px;
+}
+
+.table__no-data {
+  text-align: center;
+  padding: 15px 25px;
+}
+
+.table__container-image {
+  text-align: center;
+}
+
+.table__container-actions {
+  max-width: 65px;
+}

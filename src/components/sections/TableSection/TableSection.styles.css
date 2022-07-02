@@ -1,0 +1,7 @@
+.table-section {
+    margin-bottom: 15px;
+}
+.column__actions {
+  display: flex;
+  justify-content: space-around;
+}

@@ -16,5 +16,7 @@ export const httpRequest = <T>(
       "content-type": "application/json;charset=UTF-8",
     },
     body,
-  }).then((response) => response.json());
+  }).then((response) => {
+    return response.json();
+  });
 };
