@@ -1,0 +1,29 @@
+.label {
+  display: flex;
+  align-items: center;
+}
+
+.label__name {
+  min-width: 60px;
+  margin-right: 10px;
+  text-align: end;
+}
+
+.label__input {
+  display: flex;
+  padding: 2px;
+  border: 2px solid var(--border-color);
+  border-radius: 2px;
+  background: #fff;
+  padding: 7px 8px;
+  font-size: 16px;
+}
+
+.label__input:focus {
+  border: 2px solid var(--border-color);
+  outline: none;
+}
+
+.label--error {
+  border: 2px solid #ea0d27;
+}
