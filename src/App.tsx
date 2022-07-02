@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./App.css";
 import EditIcon from "./assets/icons/EditIcon";
 import PlusIcon from "./assets/icons/PlusIcon";
@@ -5,8 +6,15 @@ import SaveIcon from "./assets/icons/SaveIcon";
 import TrashIcon from "./assets/icons/TrashIcon";
 import Button from "./components/Button/Button";
 import InputSearch from "./components/InputSearch/InputSearch";
+import { getPokemons } from "./services";
 
 function App() {
+  useEffect(() => {
+    getPokemons().then((pokemons) => {
+      console.log({ pokemons });
+    });
+  }, []);
+
   return (
     <div className="App">
       <header>
