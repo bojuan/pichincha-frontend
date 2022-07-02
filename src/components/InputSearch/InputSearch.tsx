@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { InputSearchProps } from "./InputSearch.interfaces";
-import "./InputSearch.css";
+import "./InputSearch.styles.css";
 
 const InputSearch: FC<InputSearchProps> = ({
   placeholder = "Buscar",

@@ -1,4 +1,9 @@
 import "./App.css";
+import EditIcon from "./assets/icons/EditIcon";
+import PlusIcon from "./assets/icons/PlusIcon";
+import SaveIcon from "./assets/icons/SaveIcon";
+import TrashIcon from "./assets/icons/TrashIcon";
+import Button from "./components/Button/Button";
 import InputSearch from "./components/InputSearch/InputSearch";
 
 function App() {
@@ -6,7 +11,15 @@ function App() {
     <div className="App">
       <header>
         <h1>Listado de Pokemon</h1>
-        <InputSearch onSearch={(value) => console.log(value)} />
+        <div>
+          <InputSearch onSearch={(value) => console.log(value)} />
+          <Button icon={<PlusIcon />}>Nuevo</Button>
+          <Button icon={<TrashIcon />} type="text" />
+          <Button icon={<EditIcon />} type="text" />
+          <Button icon={<SaveIcon />} disabled>
+            Guardar
+          </Button>
+        </div>
       </header>
     </div>
   );

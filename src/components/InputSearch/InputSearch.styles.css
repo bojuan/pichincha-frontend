@@ -3,7 +3,6 @@
   display: flex;
   padding: 2px;
   border: 1px solid currentColor;
-  margin: 0 0 30px;
 }
 
 .search__input {
