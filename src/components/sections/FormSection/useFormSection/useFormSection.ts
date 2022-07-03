@@ -7,6 +7,7 @@ const useFormSection = () => {
   const {
     pokemons,
     pokemonToEdit,
+    openPokemonForm,
     actions: { handleOpenForm, handlePokemonToEdit, setPokemonsList },
   } = usePokemonContext();
 
@@ -129,13 +130,6 @@ const useFormSection = () => {
   };
 
   const handleSave = async () => {
-    console.log({
-      name,
-      image,
-      attack,
-      defense,
-    });
-
     if (pokemonToEdit) {
       await saveItemPokemon();
       return;
@@ -169,6 +163,8 @@ const useFormSection = () => {
     hp,
     disableButton,
     isUpdate: !!pokemonToEdit,
+    openPokemonForm,
+    pokemons,
     errors: {
       errorName,
       errorImage,
@@ -183,6 +179,8 @@ const useFormSection = () => {
       handleChangeName,
       handleChangeType,
       handleChangeHp,
+      handlePokemonToEdit,
+      setPokemonsList,
     },
   };
 };

@@ -18,14 +18,14 @@ const Label: FC<LabelProps> = ({
 }) => {
   return (
     <div className="label">
-      <label className="label__name">
+      <label htmlFor={name} className="label__name">
         {name}
         {": "}
       </label>
       <input
+        id={name}
         className={`label__input ${error ? "label--error" : ""}`}
         type="text"
-        id={name}
         name={name}
         value={value}
         onChange={onChange ? (e) => onChange(e.target.value) : undefined}

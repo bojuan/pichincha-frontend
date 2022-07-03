@@ -26,14 +26,15 @@ export const PokemonContextProvider: FC<{
     initialState?.pokemons ?? INITIAL_STATE.pokemons
   );
   const [openPokemonForm, setOpenPokemonForm] = useState<boolean>(false);
-  const [pokemonToEdit, setPokemonToEdit] = useState<Pokemon | undefined>();
+  const [pokemonToEdit, setPokemonToEdit] = useState<Pokemon | undefined>(
+    initialState?.pokemonToEdit
+  );
 
   const setPokemonsList = (newPokemonsList: Pokemon[]) => {
     setPokemons(newPokemonsList);
   };
 
   const handleOpenForm = (open: boolean) => {
-    console.log("EJECUTA", open);
     setOpenPokemonForm(open);
   };
 

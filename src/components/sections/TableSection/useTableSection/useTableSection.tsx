@@ -11,6 +11,7 @@ type UseTableSection = () => {
   actions: {
     editPokemon: (item: TablePokemonsData) => () => void;
     deletePokemon: (item: TablePokemonsData) => () => Promise<void>;
+    setPokemonsList: (newPokemonsList: Pokemon[]) => void;
   };
 };
 
@@ -59,7 +60,6 @@ export const useTableSection: UseTableSection = () => {
 
       setPokemonsList(newListPokemons);
     } catch (error) {
-      console.log("Entro catch", alert);
       alert("No se pudo eliminar el Pokemon.");
     }
   };
@@ -71,6 +71,7 @@ export const useTableSection: UseTableSection = () => {
     actions: {
       editPokemon,
       deletePokemon: deleteItemPokemon,
+      setPokemonsList,
     },
   };
 };

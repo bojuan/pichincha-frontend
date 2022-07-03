@@ -1,7 +1,10 @@
 import { act, renderHook } from "@testing-library/react-hooks";
 import { PokemonContextProvider } from "../../../../context/PokemonContext";
 import * as SERVICES from "../../../../services/services";
-import { DATA_SOURCE } from "../../../../shared/utils/test/mock-data";
+import {
+  DATA_SOURCE,
+  LIST_POKEMON,
+} from "../../../../shared/utils/test/mock-data";
 import { useTableSection } from "./useTableSection";
 
 describe("useTableSection tests", () => {
@@ -52,6 +55,10 @@ describe("useTableSection tests", () => {
     const { result } = renderCustomHook();
 
     act(() => {
+      result.current.actions.setPokemonsList(LIST_POKEMON);
+    });
+
+    act(() => {
       result.current.actions.editPokemon(DATA_SOURCE[0])();
     });
 
@@ -67,6 +74,19 @@ describe("useTableSection tests", () => {
   it("When deleteItemPokemon failed should execute an alert", async () => {
     const alertMock = jest.spyOn(window, "alert").mockImplementation();
     jest.spyOn(SERVICES, "deletePokemon").mockRejectedValue({});
+
+    const { result } = renderCustomHook();
+
+    await act(async () => {
+      await result.current.actions.deletePokemon(DATA_SOURCE[0])();
+    });
+
+    expect(alertMock).toBeCalledWith("No se pudo eliminar el Pokemon.");
+  });
+
+  it("When deleteItemPokemon return false should execute an alert", async () => {
+    const alertMock = jest.spyOn(window, "alert").mockImplementation();
+    jest.spyOn(SERVICES, "deletePokemon").mockResolvedValue(false);
 
     const { result } = renderCustomHook();
 

@@ -12,7 +12,7 @@ export interface SliderProps {
 const Slider: FC<SliderProps> = ({ name, value, onChange, min, max }) => {
   return (
     <div className="slider">
-      <label className="slider__name">
+      <label className="slider__name" htmlFor={name}>
         {name}
         {": "}
       </label>
