@@ -37,12 +37,12 @@ function TableSection() {
           <Button
             icon={<EditIcon />}
             type="text"
-            onClick={() => editPokemon(item)}
+            onClick={editPokemon(item)}
           />
           <Button
             icon={<TrashIcon />}
             type="text"
-            onClick={() => deletePokemon(item)}
+            onClick={deletePokemon(item)}
           />
         </div>
       ),

@@ -4,7 +4,14 @@
   padding: 20px;
 }
 
+.form__title h2 {
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
 .form__body {
+  margin-top: 35px;
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 20px;

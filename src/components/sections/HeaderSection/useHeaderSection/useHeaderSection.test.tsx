@@ -2,7 +2,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { PokemonContextProvider } from "../../../../context/PokemonContext";
 import useHeaderSection from "./useHeaderSection";
 import * as SERVICES from "../../../../services/services";
-import { LIST_POKEMON } from "../../../../utils/test/mock-data";
+import { LIST_POKEMON } from "../../../../shared/utils/test/mock-data";
 
 describe("useHeaderSection tests", () => {
   const renderCustomHook = () => {

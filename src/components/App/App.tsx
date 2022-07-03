@@ -11,8 +11,7 @@ function App() {
     <div className="App">
       <HeaderSection />
       <TableSection />
-      <FormSection />
-      {openPokemonForm && <div> FORM</div>}
+      {openPokemonForm && <FormSection />}
     </div>
   );
 }

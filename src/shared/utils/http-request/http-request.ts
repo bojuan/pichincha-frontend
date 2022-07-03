@@ -1,10 +1,10 @@
-const BASE_URL = "https://bp-pokemons.herokuapp.com";
+import { BASE_URL } from "../../constants/pichincha-constants";
 
 export const httpRequest = <T>(
   url: string,
   data?: {
-    method: "GET" | "POST" | "PUT" | "DELETE";
-    body: any;
+    method?: "GET" | "POST" | "PUT" | "DELETE";
+    body?: any;
   }
 ): Promise<T> => {
   const method = data?.method ?? "GET";

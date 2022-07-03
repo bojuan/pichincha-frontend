@@ -3,10 +3,10 @@ import "./Slider.styles.css";
 
 export interface SliderProps {
   name: string;
-  value?: string;
+  value?: number;
   min?: number;
   max?: number;
-  onChange?: (value: string) => void;
+  onChange?: (value: number) => void;
 }
 
 const Slider: FC<SliderProps> = ({ name, value, onChange, min, max }) => {
@@ -28,7 +28,9 @@ const Slider: FC<SliderProps> = ({ name, value, onChange, min, max }) => {
           value={value}
           min={min}
           max={max}
-          onChange={onChange ? (e) => onChange(e.target.value) : undefined}
+          onChange={
+            onChange ? (e) => onChange(Number(e.target.value)) : undefined
+          }
         />
         {typeof max === "number" && (
           <span className="slider__range">{max}</span>

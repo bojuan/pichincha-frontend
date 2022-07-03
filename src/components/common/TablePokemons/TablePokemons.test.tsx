@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import {
   COLUMNS_TABLE_POKEMONS,
   DATA_SOURCE,
-} from "../../../utils/test/mock-data";
+} from "../../../shared/utils/test/mock-data";
 import TablePokemons from "./TablePokemons";
 
 describe("TablePokemons test", () => {

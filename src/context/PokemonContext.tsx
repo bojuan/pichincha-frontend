@@ -10,17 +10,21 @@ export const INITIAL_STATE = {
     handlePokemonToEdit: (pokemon?: Pokemon) => {},
     handleOpenForm: (open: boolean) => {},
   },
-  
 };
 
-const PokemonContext = createContext<typeof INITIAL_STATE>(INITIAL_STATE);
+type InitialStateType = typeof INITIAL_STATE;
+
+const PokemonContext = createContext<InitialStateType>(INITIAL_STATE);
 
 export const usePokemonContext = () => useContext(PokemonContext);
 
-export const PokemonContextProvider: FC<{ children: ReactNode }> = ({
-  children,
-}) => {
-  const [pokemons, setPokemons] = useState<Pokemon[]>(INITIAL_STATE.pokemons);
+export const PokemonContextProvider: FC<{
+  children: ReactNode;
+  initialState?: Partial<InitialStateType>;
+}> = ({ children, initialState }) => {
+  const [pokemons, setPokemons] = useState<Pokemon[]>(
+    initialState?.pokemons ?? INITIAL_STATE.pokemons
+  );
   const [openPokemonForm, setOpenPokemonForm] = useState<boolean>(false);
   const [pokemonToEdit, setPokemonToEdit] = useState<Pokemon | undefined>();
 
@@ -29,12 +33,13 @@ export const PokemonContextProvider: FC<{ children: ReactNode }> = ({
   };
 
   const handleOpenForm = (open: boolean) => {
-    setOpenPokemonForm(open)
-  }
+    console.log("EJECUTA", open);
+    setOpenPokemonForm(open);
+  };
 
   const handlePokemonToEdit = (pokemon?: Pokemon) => {
-    setPokemonToEdit(pokemon)
-  }
+    setPokemonToEdit(pokemon);
+  };
 
   return (
     <PokemonContext.Provider
@@ -45,9 +50,8 @@ export const PokemonContextProvider: FC<{ children: ReactNode }> = ({
         actions: {
           setPokemonsList,
           handleOpenForm,
-          handlePokemonToEdit
+          handlePokemonToEdit,
         },
-        
       }}
     >
       {children}

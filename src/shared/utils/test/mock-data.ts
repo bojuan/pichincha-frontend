@@ -1,8 +1,8 @@
 import {
   TablePokemonsColumn,
   TablePokemonsData,
-} from "../../components/common/TablePokemons/TablePokemons.interfaces";
-import { Pokemon } from "../../interfaces/Pokemon";
+} from "../../../components/common/TablePokemons/TablePokemons.interfaces";
+import { Pokemon } from "../../../interfaces/Pokemon";
 
 export const LIST_POKEMON: Pokemon[] = [
   {

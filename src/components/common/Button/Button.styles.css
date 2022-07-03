@@ -9,6 +9,10 @@
   max-width: 135px;
 }
 
+.btn:hover {
+  opacity: 0.7;
+}
+
 .btn svg {
   margin-right: 5px;
 }
